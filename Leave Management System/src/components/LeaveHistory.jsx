@@ -9,9 +9,12 @@ export default function LeaveHistory() {
 
 //   This is initial leave data
   const initialLeaves = [
-    { id: 1, from: "2025-10-10", to: "2025-10-12", reason: "Fever", status: "Approved" },
-    { id: 2, from: "2025-09-05", to: "2025-09-07", reason: "Travel", status: "Pending" },
-    { id: 3, from: "2025-09-03", to: "2025-09-05", reason: "Travel", status: "Rejected" },
+    { id: 1, from: "2025-10-10", to: "2025-10-12", type:"Sick", reason: "Fever", status: "Approved" },
+    { id: 2, from: "2025-09-05", to: "2025-09-07",type:"Casual", reason: "Travel", status: "Pending" },
+    { id: 3, from: "2025-09-03", to: "2025-09-05",type: "Casual", reason: "Travel", status: "Rejected" },
+    { id: 4, from: "2025-08-13", to: "2025-08-25",type: "Earn", reason: "Hospital", status: "Approved" },
+    { id: 5, from: "2025-08-03", to: "2025-08-05",type: "Casual", reason: "Travel", status: "Approved" },
+    { id: 6, from: "2025-07-23", to: "2025-07-24",type: "Casual", reason: "Trip", status: "Approved" },
   ];
 
   const [myLeaves, setMyLeaves] = useState([]);
@@ -48,6 +51,7 @@ export default function LeaveHistory() {
               <tr className="border-b border-gray-300">
                 <th className="text-left py-2 px-3">From</th>
                 <th className="text-left py-2 px-3">To</th>
+                <th className="text-left py-2 px-3">Type</th>
                 <th className="text-left py-2 px-3">Reason</th>
                 <th className="text-left py-2 px-3">Status</th>
               </tr>
@@ -59,9 +63,11 @@ export default function LeaveHistory() {
                 {/* This is condional rendering of leave data */}
               {myLeaves.length > 0 ? (
                 myLeaves.map((l) => (
-                  <tr key={l.id} className="border-b border-gray-200 hover:bg-gray-50 transition">
+                  <tr key={l.id || Math.random()} className="border-b border-gray-200 hover:bg-gray-50 transition">
+
                     <td className="py-2 px-3">{l.from}</td>
                     <td className="py-2 px-3">{l.to}</td>
+                    <td className="py-2 px-3">{l.type}</td>
                     <td className="py-2 px-3">{l.reason}</td>
                     <td
                       className={`p-4 rounded-lg 

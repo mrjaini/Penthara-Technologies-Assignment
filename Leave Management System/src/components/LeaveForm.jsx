@@ -7,8 +7,9 @@ export default function LeaveForm() {
   const { addLeave } = useContext(LeaveContext); // Leave context used for adding leave data in local storage
 
   // States used for form fields
-  const [from, setFrom] = useState(""); 
-  const [to, setTo] = useState(""); 
+  const [from, setFrom] = useState("");
+  const [to, setTo] = useState("");
+  const [type, setType] = useState("");
   const [reason, setReason] = useState("");
 
   // Navigate hook to redirect after form submission
@@ -21,10 +22,12 @@ export default function LeaveForm() {
       from,
       to,
       reason,
+      type,
     });
     setFrom("");
     setTo("");
     setReason("");
+    setType("");
     navigate("/leave-history");
   };
 
@@ -66,6 +69,22 @@ export default function LeaveForm() {
               onChange={(e) => setTo(e.target.value)}
               required
             />
+          </div>
+
+          <div>
+            <label className="block text-sm mb-1">Type</label>
+            <select
+              className="w-full p-2 rounded-lg border border-gray-300"
+              value={type}
+              onChange={(e) => setType(e.target.value)}
+              required
+            >
+              <option value="" disabled>Select leave type</option>
+              <option value="Casual">Casual Leave</option>
+              <option value="Earn">Earn Leave</option>
+              <option value="Sick">Sick Leave</option>
+            </select>
+
           </div>
 
           <div>

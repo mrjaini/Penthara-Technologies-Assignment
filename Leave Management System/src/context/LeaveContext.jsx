@@ -5,38 +5,36 @@ export const LeaveContext = createContext(null);
 export function LeaveProvider({ children }) {
   const [leaves, setLeaves] = useState([]);
 
-//   This effect clear local storage saved item after re-rendring
+  //this is to load saved leaves from localStorage on first render
   useEffect(() => {
-    return () => {
-      localStorage.removeItem("leaves");
-    };
+
+    // this is retrive data from local storage
+    const savedLeaves = JSON.parse(localStorage.getItem("leaves")) || [];
+    setLeaves(savedLeaves);
   }, []);
 
-// This effect set the items is local storage 
+  // This is to save leaves to localStorage
   useEffect(() => {
     localStorage.setItem("leaves", JSON.stringify(leaves));
   }, [leaves]);
 
-//   This is add fuctionn to add leave in leave history component
-const words = ["Approved", "Rejected", "Pending"]
+  // This list is to add new leave with random status
+  const words = ["Approved", "Rejected", "Pending"];
+
+  // This is to add new leave
   const addLeave = useCallback((leave) => {
     setLeaves((prev) => [
       ...prev,
       {
-        id: Date.now().toString(),
-        status: words[Math.floor(Math.random() * words.length)], // randomly assign status
+        id: Date.now().toString(), // this is for unique ID for each leave
+        status: words[Math.floor(Math.random() * words.length)], // Random status assiged to new added leave
         ...leave,
       },
     ]);
   }, []);
 
   return (
-    <LeaveContext.Provider
-      value={{
-        leaves,
-        addLeave,
-      }}
-    >
+    <LeaveContext.Provider value={{ leaves, addLeave }}>
       {children}
     </LeaveContext.Provider>
   );
