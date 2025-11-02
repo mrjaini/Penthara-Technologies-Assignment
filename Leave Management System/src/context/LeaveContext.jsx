@@ -24,12 +24,12 @@ export function LeaveProvider({ children }) {
   // This is to add new leave
   const addLeave = useCallback((leave) => {
     setLeaves((prev) => [
-      ...prev,
       {
         id: Date.now().toString(), // this is for unique ID for each leave
         status: words[Math.floor(Math.random() * words.length)], // Random status assiged to new added leave
         ...leave,
       },
+      ...prev,
     ]);
   }, []);
 
