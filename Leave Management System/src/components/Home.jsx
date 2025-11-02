@@ -1,5 +1,5 @@
 import React from "react";
-
+import {NavLink} from 'react-router-dom'
 function Home() {
   return (
     <div className="min-h-screen w-full rounded-2xl m-5 bg-white text-white flex flex-col items-center justify-center p-8">
@@ -14,7 +14,7 @@ function Home() {
 
         {/* Button */}
         <button className="bg-white text-black px-8 py-3 border border-black rounded-full font-semibold hover:bg-gray-200 transition-all duration-300 shadow-md hover:border-gray-300 hover:px-10 hover:py-5 hover:font-bold">
-          Get Started
+          <NavLink to="/dashboard">Get started</NavLink>
         </button>
       </div>
 
