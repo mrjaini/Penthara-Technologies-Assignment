@@ -41,8 +41,8 @@ export default function LeaveForm() {
         <img src={image} alt="image" className="w-100 ml-20 mt-3" />
       </div>
 
-      {/*This is Form dic sectiob */}
-      <div className="w-1/2 mx-auto my-30 bg-white text-black p-6 rounded-2xl shadow-xl border border-gray-200">
+      {/*This is Form div sectio */}
+      <div className="w-1/2 mx-auto my-auto bg-white text-black p-6 rounded-2xl shadow-xl border border-gray-200">
         <h2 className="text-xl font-semibold mb-3">Apply for Leave</h2>
 
         {/* this is form section */}

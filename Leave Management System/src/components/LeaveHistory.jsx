@@ -37,11 +37,11 @@ export default function LeaveHistory() {
       </div>
 
       {/* This is leave history section to show data */}
-      <div className="w-1/2 m-auto bg-white text-black p-6 rounded-2xl shadow-lg border border-gray-200">
+      <div className="w-1/2 mx-auto my-auto bg-white text-black p-6 rounded-2xl shadow-lg border border-gray-200">
         <h2 className="text-xl font-semibold mb-3">Leave History</h2>
 
         {/* Div section showing data of leave */}
-        <div className="max-h-80 overflow-y-auto border border-gray-100 rounded-lg">
+        <div className="max-h-100 overflow-y-auto border border-gray-100 rounded-lg">
 
             {/* Table for data show  */}
           <table className="w-full border-collapse">
