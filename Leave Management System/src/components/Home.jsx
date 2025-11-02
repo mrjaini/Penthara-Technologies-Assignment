@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom'
 function Home() {
   return (
     <div className="min-h-screen w-full rounded-2xl m-5 bg-white text-white flex flex-col items-center justify-center p-8">
-      {/* Hero Section */}
+
       <div className="text-center max-w-3xl">
         <h1 className="text-5xl font-extrabold mb-6 text-black">
           Welcome to <span className="text-gray-600 hover:text-blue-600">Leave Management System</span>
@@ -12,13 +12,12 @@ function Home() {
           Manage your leaves efficiently — Apply, Check Status, and Stay Updated.
         </p>
 
-        {/* Button */}
         <button className="bg-white text-black px-8 py-3 border border-black rounded-full font-semibold hover:bg-gray-200 transition-all duration-300 shadow-md hover:border-gray-300 hover:px-10 hover:py-5 hover:font-bold">
           <NavLink to="/dashboard">Get started</NavLink>
         </button>
       </div>
 
-      {/* SVG Illustration */}
+      {/* SVG from w3 */}
       <div className="mt-16 w-80 sm:w-96">
         <svg
           xmlns="http://www.w3.org/2000/svg"
