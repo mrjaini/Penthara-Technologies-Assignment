@@ -22,7 +22,7 @@ export default function LeaveHistory() {
   useEffect(() => {
 
     // This is all leave data (initial + new added)
-    const allLeaves = [...initialLeaves, ...leaves]
+    const allLeaves = [...leaves, ...initialLeaves]
     setMyLeaves(allLeaves);
 
   }, [leaves]);
